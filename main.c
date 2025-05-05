@@ -84,17 +84,19 @@ void blockcmp()
     blocks_stat1 = (int)stat1.st_blocks;
     blocks_stat2 = (int)stat2.st_blocks;
 
+    printf("block compare\n");
+
     if (blocks_stat1 > blocks_stat2)
     {
-        printf("text1 uses more blocks\n");
+        printf("text1 is bigger\n\n");
     }
     else if (blocks_stat1 < blocks_stat2)
     {
-        printf("text2 uses more blocks\n");
+        printf("text2 is bigger\n\n");
     }
     else
     {
-        printf("blocks are equal\n");
+        printf("sizes are equal\n\n");
     }
 }
 

@@ -55,20 +55,16 @@ void filetime2()
 // 두 개의 파일 크기를 비교하는 함수 작성
 void sizecmp()
 {
-    struct stat buf1, buf2;
-    int size_buf1, size_buf2;
+    int size_stat1, size_stat2;
 
-    stat("text1", &buf1);
-    stat("text2", &buf2);
+    size_stat1 = (int)stat1.st_size;
+    size_stat2 = (int)stat2.st_size;
 
-    size_buf1 = (int)buf1.st_size;
-    size_buf2 = (int)buf2.st_size;
-
-    if (size_buf1 > size_buf2)
+    if (size_stat1 > size_stat2)
     {
         printf("text1 is bigger\n");
     }
-    else if (size_buf1 < size_buf2)
+    else if (size_stat1 < size_stat2)
     {
         printf("text2 is bigger\n");
     }
@@ -81,20 +77,16 @@ void sizecmp()
 // 두 개의 파일 블락 수를 비교하는 함수 작성
 void blockcmp()
 {
-    struct stat buf1, buf2;
-    int blocks_buf1, blocks_buf2;
+    int blocks_stat1, blocks_stat2;
 
-    stat("text1", &buf1);
-    stat("text2", &buf2);
+    blocks_stat1 = (int)stat1.st_blocks;
+    blocks_stat2 = (int)stat2.st_blocks;
 
-    blocks_buf1 = (int)buf1.st_blocks;
-    blocks_buf2 = (int)buf2.st_blocks;
-
-    if (blocks_buf1 > blocks_buf2)
+    if (blocks_stat1 > blocks_stat2)
     {
         printf("text1 uses more blocks\n");
     }
-    else if (blocks_buf1 < blocks_buf2)
+    else if (blocks_stat1 < blocks_stat2)
     {
         printf("text2 uses more blocks\n");
     }
